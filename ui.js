@@ -24,6 +24,10 @@ UI.prototype.addFilmToUI = function (film) {
 
 }
 
+UI.prototype.updateFilmOnUI = function (updated){
+    // console.log(updated);
+}
+
 UI.prototype.loadAllFilms = function (films) {
     const filmList = document.getElementById('films');
     films.forEach(function (film) {
@@ -57,9 +61,24 @@ UI.prototype.displayMessage = function (message, type) {
     //zamanlayıcı kuralım
     setTimeout(function () {
         div.remove();
-    }, 3000);
+    }, 2000);
 
 }
+
+// UI.prototype.updateMessage = function (message,type) {
+//     const cardBody = document.querySelector('.card-body');
+//     const div = document.createElement('div');
+//     div.className=`alert alert-${type}`;
+//     div.textContent = message;
+
+//     cardBody.appendChild(div); 
+
+//     setTimeout(function () {
+//         div.remove();
+//     }, 2000);
+// }
+
+
 UI.prototype.clearAllFilmsFromUI = function () {
     const filmList = document.getElementById('films');
     //1. yöntem
