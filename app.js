@@ -17,7 +17,6 @@ const storage = new Storage();
 eventListener();
 function eventListener() {
     //Formun submit olayı için event listener ekledik
-    // form.addEventListener('submit', updatedFilm);
     form.addEventListener('submit', addFilm);
     document.addEventListener('DOMContentLoaded', function () {
         //storageden filmleri yükle
@@ -91,7 +90,7 @@ function updateFilmDisplay() {
     if (title === '' || director === '' || url === '') {
         alert('Güncellenecek filmi seçin.');
     } else {
-        degistir(degistirindex)
+        degistir(degistirindex);
         alert('Film Güncellendi');
     }
 }
@@ -128,30 +127,7 @@ function degistir(index) {
     document.getElementById('films').innerHTML = "";
     ui.loadAllFilms(films);
 }
-// function updatedFilm(e) {
-//     document.getElementById('guncelle').style.background = 'green'
-//     document.getElementById('guncelle').disabled = false
 
-//     document.getElementById('filmEkle').style.background = 'gray'
-//     document.getElementById('filmEkle').disabled = true
-//     e.preventDefault();
-//     //UI'de filmi güncelle
-//     //Storage'te filmi güncelle
-//     if (e.target.className === "btn btn-success") {
-//         var baslik = e.target.parentElement.parentElement.firstChild.nextSibling.nextSibling.nextSibling.innerText;
-//         ui.updateFilmOnUI();
-//         let films = storage.getFilmsFromStorage();
-//         for (let i = 0; i < films.length; i++) {
-//             if (films[i].title == baslik) {
-//                 titleElement.value = films[i].title;
-//                 directorElement.value = films[i].director;
-//                 urlElement.value = films[i].url;
-//             }
-//             ui.deleteFilmFromUI(e.target.parentElement.parentElement);
-//             storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
-//         }
-//     }
-// }
 
 function clearAllFilms(e) {
     e.preventDefault();
